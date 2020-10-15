@@ -23,7 +23,7 @@ class Command(BaseCommand):
                         longitude = i['Y'],
                         unique_squirrel_id = i['Unique Squirrel ID'],
                         shift = i['Shift'],
-                        date = i['Date'],
+                        date = datetime.datetime.strptime(i['Date'],'%m%d%Y'),
                         age = i['Age'],
                         primary_fur_color = i['Primary Fur Color'],
                         location = i['Location'],
@@ -48,4 +48,4 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(msg))
 
         except:
-            raise CommandError('Import file failed')
+            raise CommandError('Importing file failed')
