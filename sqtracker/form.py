@@ -9,4 +9,4 @@ class Form(ModelForm):
 class Partial(ModelForm):
     class Meta:
         model = Sightings
-        fields = ['latitude', 'longitude', 'unique_squirrel_id', 'shift', 'date', 'ago']
+        fields = ['latitude', 'longitude', 'unique_squirrel_id', 'shift', 'date', 'age']

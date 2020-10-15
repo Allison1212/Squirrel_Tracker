@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Sightings
+from .form import Form,Partial
 
 def homepage(request):
     return render(request, 'sqtracker/homepage.html', {})
 
 def sightings(request):
-    Sightings = Sightings.object.all()
+    Sightings = Sightings.objects.all()
     context = {
         'Sighting': Sightings
     }
@@ -40,9 +41,9 @@ def add(request):
         return render(request, 'sqtracker/add.html', context)
 
 def stats(request):
-    Number_of_Sightings = Sightings.object.all().count()
+    Number_of_Sightings = Sightings.objects.all().count()
     Number_of_Adults = Sightings.objects.filter(age = 'Adult').count()
-    Number_of_Gray = Sightings.object.filter(primary_fur_color = 'Gray').count()
+    Number_of_Gray = Sightings.objects.filter(primary_fur_color = 'Gray').count()
     Number_of_Eating = Sightings.objects.filter(eating = True).count()
     Number_of_Climbing = Sightings.objects.filter(climbing = True).count()
     context = {
@@ -55,7 +56,7 @@ def stats(request):
     return render(request, 'sqtracker/stats.html', context)
 
 def map(request):
-    sightings = Sightings.object.all()
+    sightings = Sightings.objects.all()
     context = {
         'sightings': sightings
     }

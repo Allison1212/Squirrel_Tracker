@@ -3,12 +3,12 @@ from django.utils.translation import gettext as _
 
 class Sightings(models.Model):
     # Latitude
-    latitude = models.CharField(
+    latitude = models.FloatField(
         max_length = 20,
     )
 
     #Longitude
-    longitude = models.CharField(
+    longitude = models.FloatField(
         max_length = 20,
     )
 
