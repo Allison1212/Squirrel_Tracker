@@ -59,10 +59,10 @@ class Sightings(models.Model):
     GRAY = 'Gray'
     CINNAMON = 'Cinnamon'
     COLOR_CHOICE=(
-            (BLACK,_'Black'),
-            (GRAY,_'Gray'),
-            (CINNAMON,_'Cinnamon'),
-            (None,_''),
+            (BLACK,_('Black')),
+            (GRAY,_('Gray')),
+            (CINNAMON,_('Cinnamon')),
+            (None,_('')),
             )
     primary_fur_color = models.CharField(
             max_length=16,
