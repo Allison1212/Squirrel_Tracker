@@ -43,7 +43,7 @@ class Command(BaseCommand):
                         indifferent = convertBool(i['Indifferent']),
                         runs_from = convertBool(i['Runs from']),
                     )
-            data.save()
+                    data.save()
             msg = f'You are importing from {file_path}'
             self.stdout.write(self.style.SUCCESS(msg))
 
