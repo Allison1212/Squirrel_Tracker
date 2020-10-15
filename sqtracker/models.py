@@ -56,7 +56,7 @@ class Sightings(models.Model):
 
     # Primary Fur Color
     BLACK = 'Black'
-    Gray = 'Gray'
+    GRAY = 'Gray'
     CINNAMON = 'Cinnamon'
     COLOR_CHOICE=(
             (BLACK,_'Black'),
