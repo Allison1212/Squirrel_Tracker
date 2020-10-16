@@ -2,40 +2,68 @@
 <html>
 
 <head>
-  <title>2018 Central Park Squirrel Census</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>All Sighting</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
-<body>
-  <div>
-      <a href='/sightings/stats/'>
-        <center>
-          <button type="button">Squirrels Stats Summary</button>
-        </center>
-      </a>
+<body style = 'background:url(https://images.pexels.com/photos/627823/pexels-photo-627823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;'>
+    <p>
 
-      <a href='/sightings/add/'>
-        <center>
-          <button type="button">New Sighting Creation</button>
-        </center>
-      </a>
-
-      <a href='/'>
-        <center>
-          <button type="button">Return to Home page</button>
-        </center>
-      </a>
-
-    <ul>
-      {% for sighting in sightings %}
-      <li>
-
-        <a href='{{ sighting.unique_squirrel_id}}'>{{ sighting.unique_squirrel_id }}</a>
-
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href='/'>Home page</a>
       </li>
-      {% endfor %}
+      <li class="nav-item">
+        <a class="nav-link" href='/sightings/add/'>New Sighting</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">All Sightings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href='/sightings/stats/'>Stats Summary</a>
+      </li>
     </ul>
+    <p>
+      <pre>
+      </pre>
+    </p>
+    </p>
+  <body>
+
+  <div class="container">
+    <div class="jumbotron">
+  	   <div class="page-header">
+  		     <h1 class="display-4">All Sightings</h1>
+           <hr class="my-4">
+           <p class="lead">See the details of sighting by clicking the link!</p>
+  	   </div>
+    </div>
+    <p>
+      <pre>
+      </pre>
+    </p>
+    <div data-spy="scroll" data-offset="0">
+      <div style = 'overflow: auto; width: 1060px; height: 1000px;'>
+        <ul style = "columns: 4">
+          {% for sighting in sightings %}
+          <li class="list-group-item">
+
+            <a href='{{ sighting.unique_squirrel_id}}'>{{ sighting.unique_squirrel_id }}</a>
+
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext as _
-
+from django.forms import ModelForm
+from django.urls import reverse
 
 
 class Meta:
