@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+
+<h1>
+	<center>Update Sightings</center>
+</h1>
+
+<body>
+	<form action='.' method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Update" />
+	</form>
+	<br>
+	<a href='/sightings/' class=''><button type='button' class='button'>Back to the list page</button></a>
+</body>
+
+</html>

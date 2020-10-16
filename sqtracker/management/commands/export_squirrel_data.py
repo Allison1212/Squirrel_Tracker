@@ -1,6 +1,5 @@
 import csv
 import datetime
-
 from django.core.management.base import BaseCommand, CommandError
 from sqtracker.models import Sightings
 
@@ -14,7 +13,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             file_path = options['export_path']
-            with open(file_path[0],'w') as fp:
+            with open(file_path,'w') as fp:
                 sighting_writer = csv.DictWriter(
                     fp,
                     delimiter = ',',
@@ -42,17 +41,22 @@ class Command(BaseCommand):
                         'Approaches',
                         'Indifferent',
                         'Runs from',
-                    ]
-                )
+                        ]
+                    )
                 sighting_writer.writeheader()
 
-                for row in Sightings:
+                for row in Sightings.objects.all():
+                    if row.date:
+                        date_form = row.date.strftime('%m%d%Y')
+                    else:
+                        date_form = row.date
+                        
                     sighting_writer.writerow({
                         'X': row.longitude,
                         'Y': row.latitude,
                         'Unique Squirrel ID': row.unique_squirrel_id,
                         'Shift': row.shift,
-                        'Date': row.date,
+                        'Date': date_form,
                         'Age': row.age,
                         'Primary Fur Color': row.primary_fur_color,
                         'Location': row.location,
@@ -70,8 +74,8 @@ class Command(BaseCommand):
                         'Tail twitches': row.tail_twitches,
                         'Approaches': row.approaches,
                         'Indifferent': row.indifferent,
-                        'Runs from': row.runs_from,
-                    })
+                        'Runs from': row.runs_from
+                        })
             msg = f'You are exporting to {file_path}'
             self.stdout.write(self.style.SUCCESS(msg))
         except:

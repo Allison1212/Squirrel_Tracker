@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+<h1>Sighting Stats</h1>
+{% block content %}
+<form method='GET'>
+
+	<table align='center' class="mt-1 table table-striped">
+		<tr class="bg-info">
+			<th># Squirrels</th>
+			<th># Adult Squirrels</th>
+			<th># Squirrels with Gray Fur</th>
+			<th># Squirrels Eating</th>
+			<th># Squirrels Climbing</th>
+		</tr>
+		<tr class="bg-warning">
+			<td>{{ Number_of_Sightings }}</td>
+			<td>{{ Number_of_Adults }}</td>
+			<td>{{ Number_of_Gray }}</td>
+			<td>{{ Number_of_Eating }}</td>
+			<td>{{ Number_of_Climbing }}</td>
+		</tr>
+	</table>
+</form>
+<a href='/sightings/' class=''>
+	<center><button type='button' class='btn btn-primary button'>Back to the list page</button></center>
+</a>
+{% endblock %}
+
+</html>

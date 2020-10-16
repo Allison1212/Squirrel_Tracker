@@ -1,5 +1,11 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from django.forms import ModelForm
+from django.urls import reverse
+
+
+class Meta:
+    managed = True
 
 class Sightings(models.Model):
     # Latitude
@@ -14,7 +20,9 @@ class Sightings(models.Model):
 
     #Unique Squirrel ID
     unique_squirrel_id = models.CharField(
-        max_length = 20,
+        max_length = 100,
+        primary_key = True,
+        default = None,
     )
 
     #Shift
@@ -33,7 +41,6 @@ class Sightings(models.Model):
 
     #Date
     date = models.DateField(
-        help_text = _('Date'),
         null = True,
         blank = True
     )
@@ -64,9 +71,11 @@ class Sightings(models.Model):
             (CINNAMON,_('Cinnamon')),
             (None,_('')),
             )
+
     primary_fur_color = models.CharField(
             max_length=16,
             choices = COLOR_CHOICE,
+            null = True,
             blank = True
     )
 
