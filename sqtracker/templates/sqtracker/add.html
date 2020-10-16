@@ -8,6 +8,7 @@
 </head>
 <body>
 		<p>
+      <nav class="navbar navbar-light bg-light">
       <ul class="nav">
         <li class="nav-item">
           <a class="nav-link active" href='/'>Home page</a>
@@ -22,12 +23,12 @@
           <a class="nav-link" href='/sightings/stats/'>Stats Summary</a>
         </li>
       </ul>
-      <p>
-        <pre>
-        </pre>
-      </p>
+      </nav>
     </p>
-
+    <p>
+      <pre>
+      </pre>
+    </p>
   <body style = 'background:url(https://i2.wp.com/www.lashcondolaw.com/wp-content/uploads/2017/12/landscape-animal-mountain-top.jpg?resize=1024%2C680&ssl=1);  background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;'>
@@ -45,11 +46,11 @@
                         {% csrf_token %}
                         {{form.as_p}}
                         <br>
-      <hr class="my-4">
-			<p class="lead">Thanks for sharing! </p>
+                        <hr class="my-4">
+			                     <p class="lead">Thanks for sharing! </p>
 
                         <input type="submit"; name="add"; class="btn btn-primary"; STYLE="color: #FFFFFF;background-color: #077BF3";>
-			<br>
+			                     <br>
                   </div>
                 </form>
 		<br>

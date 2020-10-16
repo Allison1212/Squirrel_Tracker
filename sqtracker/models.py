@@ -69,7 +69,6 @@ class Sightings(models.Model):
             (BLACK,_('Black')),
             (GRAY,_('Gray')),
             (CINNAMON,_('Cinnamon')),
-            (None,_('')),
             )
 
     primary_fur_color = models.CharField(
