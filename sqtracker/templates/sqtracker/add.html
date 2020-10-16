@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+        <head>
+                <title>Squirrel Tracker: Add a Squirrel Sight</title>
+        </head>
+        <body>
+		<p>
+		<br>
+		<strong><h2>  Did you see a new Sqiurrel? </strong>
+
+		<p>Please Tell Me About Your Discovery!</p>
+		<hr>
+		<br>
+                <form method='post'>
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <br>
+			<p>Thanks for sharing! </p>
+                        <input type="submit" name="add">
+			<br>
+                </form>
+		<br>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>2018 Central Park Squirrel Census</title>
+
+</head>
+
+<body>
+  <div>
+      <a href='/sightings/stats/'>
+        <center>
+          <button type="button">Squirrels Stats Summary</button>
+        </center>
+      </a>
+
+      <a href='/sightings/add/'>
+        <center>
+          <button type="button">New Sighting Creation</button>
+        </center>
+      </a>
+
+      <a href='/'>
+        <center>
+          <button type="button">Return to Home page</button>
+        </center>
+      </a>
+
+    <ul>
+      {% for sighting in sightings %}
+      <li>
+
+        <a href='{{ sighting.unique_squirrel_id}}'>{{ sighting.unique_squirrel_id }}</a>
+
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+
+</html>

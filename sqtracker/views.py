@@ -6,17 +6,18 @@ from .form import Form,Partial
 def homepage(request):
     return render(request, 'sqtracker/homepage.html', {})
 
+
 def sightings(request):
-    Sightings = Sightings.objects.all()
+    sightings = Sightings.objects.all()
     context = {
-        'Sighting': Sightings
+        'sightings': sightings
     }
     return render (request, 'sqtracker/sightings.html', context)
 
 def update(request, unique_id):
     obj = get_object_or_404(Sightings, unique_squirrel_id=unique_id)
     form = Partial(request.POST or None, instance=obj)
-    context = {'Partial' : form}
+    context = {'Partial': form}
     if form.is_valid():
         obj = form.save(commit=False)
         obj.save()
@@ -32,12 +33,10 @@ def add(request):
         form = Form(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('/sightings')
+        return redirect('/sightings/')
     else:
         form = Form()
-        context = {
-        'form': form,
-        }
+        context = {'form': form,}
         return render(request, 'sqtracker/add.html', context)
 
 def stats(request):
@@ -51,7 +50,7 @@ def stats(request):
         'Number_of_Adults': Number_of_Adults,
         'Number_of_Gray': Number_of_Gray,
         'Number_of_Eating': Number_of_Eating,
-        'Number_of_Climbing': Number_of_Climbing
+        'Number_of_Climbing': Number_of_Climbing,
     }
     return render(request, 'sqtracker/stats.html', context)
 
