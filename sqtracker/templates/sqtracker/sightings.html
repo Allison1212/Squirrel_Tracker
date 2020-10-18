@@ -51,9 +51,9 @@
         <ul style = "columns: 4">
           {% for sighting in sightings %}
           <li class="list-group-item">
-
-            <a href='{{ sighting.unique_squirrel_id}}'>{{ sighting.unique_squirrel_id }}</a>
-
+            <div> {{ sighting.unique_squirrel_id }} </div>
+            <div> {{ sighting.date }} </div>
+            <a href='{{ sighting.unique_squirrel_id}}'>Update</a>
           </li>
           {% endfor %}
         </ul>
