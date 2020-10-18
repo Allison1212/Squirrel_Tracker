@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.forms import ModelForm
-from django.urls import reverse
 
 
 class Meta:
@@ -42,6 +41,7 @@ class Sightings(models.Model):
     #Date
     date = models.DateField(
         null = True,
+        help_text = _('The date format must be YYYY-MM-DD'),
         blank = True
     )
 
@@ -75,7 +75,6 @@ class Sightings(models.Model):
             max_length=16,
             choices = COLOR_CHOICE,
             null = True,
-            blank = True
     )
 
     #Location
