@@ -9,11 +9,7 @@ A web application project created with Django framework which could track sighti
 ### Contributors
 Group: Allison & Yanqiu
 
-UNI:
-
-Yanqiu Xiong - yx2627
-
-Jiaxue(Allison) Xu - jx2430
+UNIs: [yx2627, jx2430]
 
 Note: Since Allison used multiple devices to  write the project, authors' name Allison, Allison1212, and Allison Xu all represent the contributor Jiaxue(Allison) Xu.
 
