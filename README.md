@@ -51,4 +51,12 @@ The general sightings data statistics can be browsed by clicking "Stats Summary"
 
 
 #### Update a Sighting Data
-Users can update sighting information by click "update" on the main
+Users can update sighting information by click "update" on the main sightings page.
+
+    located at: /sightings/<unique-squirrel-id>
+
+
+### Map Visualization
+A map visualizing all the locations of squirrels' sightings in the New York City Central Park. Users can view at most 100 locations on the map. The map page could be redirected from homepage by clicking "Squirrels Map Visualization" button on homepage.
+
+        located at: /map/
