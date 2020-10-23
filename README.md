@@ -7,7 +7,7 @@ A web application project created with Django framework which could track sighti
 
 
 ### Contributors
-Project Group Allison & Yanqiu
+Project Group Allison & Yanqiu Section 1
 
 UNIs: [yx2627, jx2430]
 
