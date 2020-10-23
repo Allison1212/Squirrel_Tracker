@@ -11,7 +11,10 @@ Project Group Allison & Yanqiu Section 1
 
 UNIs: [yx2627, jx2430]
 
-Note: Since Allison used multiple devices to  write the project, authors' name Allison, Allison1212, and Allison Xu all represent the contributor Jiaxue(Allison) Xu.
+Note: Allison use the wrong email when she set up the git configuration,. Therefore, Allison's contribution is not showing in the contributors section. To see the details please refer the commit history. Since Allison used multiple devices to write the project, authors' name Allison and Allison1212 are both represent the contributor Jiaxue(Allison) Xu.
+We had also created 2 repositories before we created this one. We abandoned them after we messed up the local directory and the Github. One of them had been deleted and another repository is located at:
+https://github.com/Allison1212/Squirrel_Project.git
+
 
 Prerequisites
 ------------
